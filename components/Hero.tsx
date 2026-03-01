@@ -22,7 +22,7 @@ export default function Hero() {
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(3.5rem, 8vw, 6.5rem)",
                 lineHeight: "0.92",
-                color: "#1E1612",
+                color: "var(--c-text)",
                 letterSpacing: "-0.02em",
               }}
             >
@@ -30,7 +30,7 @@ export default function Hero() {
               <br />
               guessing.
               <br />
-              <em style={{ color: "#B5401A", fontStyle: "italic" }}>Price right.</em>
+              <em style={{ color: "var(--c-accent)", fontStyle: "italic" }}>Price right.</em>
             </h1>
           </AnimateIn>
 
@@ -39,7 +39,7 @@ export default function Hero() {
               style={{
                 fontFamily: "var(--font-sans)",
                 fontSize: "1.0625rem",
-                color: "#7A7060",
+                color: "var(--c-muted)",
                 lineHeight: "1.7",
                 maxWidth: "32rem",
               }}
@@ -65,7 +65,7 @@ export default function Hero() {
               style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.68rem",
-                color: "#7A7060",
+                color: "var(--c-muted)",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
               }}
@@ -92,7 +92,7 @@ export default function Hero() {
                   justifyContent: "space-between",
                   alignItems: "baseline",
                   padding: "0.5rem 0",
-                  borderBottom: "1px solid #E3DAC4",
+                  borderBottom: "1px solid var(--c-surface-2)",
                 }}
               >
                 <span
@@ -100,7 +100,7 @@ export default function Hero() {
                     fontFamily: "var(--font-mono)",
                     fontSize: "0.62rem",
                     letterSpacing: "0.14em",
-                    color: "#7A7060",
+                    color: "var(--c-muted)",
                     textTransform: "uppercase",
                   }}
                 >
@@ -110,7 +110,7 @@ export default function Hero() {
                   style={{
                     fontFamily: "var(--font-mono)",
                     fontSize: "0.8rem",
-                    color: "#1E1612",
+                    color: "var(--c-text)",
                     letterSpacing: "0.06em",
                   }}
                 >
@@ -126,7 +126,7 @@ export default function Hero() {
               fontFamily: "var(--font-mono)",
               fontSize: "0.58rem",
               letterSpacing: "0.18em",
-              color: "#7A7060",
+              color: "var(--c-muted)",
               textTransform: "uppercase",
               marginBottom: "0.75rem",
             }}
@@ -139,7 +139,7 @@ export default function Hero() {
             style={{
               fontFamily: "var(--font-serif)",
               fontSize: "3rem",
-              color: "#B5401A",
+              color: "var(--c-accent)",
               lineHeight: "1",
               marginBottom: "1.5rem",
               letterSpacing: "-0.03em",
@@ -147,17 +147,17 @@ export default function Hero() {
             }}
           >
             $65{" "}
-            <span style={{ color: "#C8BEA8", fontSize: "2rem", fontWeight: 400 }}>—</span>{" "}
+            <span style={{ color: "var(--c-border)", fontSize: "2rem", fontWeight: 400 }}>—</span>{" "}
             $95
           </div>
 
           {/* Stats */}
           <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
             {[
-              { label: "AVG SOLD PRICE", value: "$78", color: "#3D7A52" },
-              { label: "AVG SELL TIME", value: "4–7 days", color: "#1E1612" },
-              { label: "COMPS ANALYZED", value: "23 listings", color: "#1E1612" },
-            ].map(({ label, value, color }) => (
+              { label: "AVG SOLD PRICE", value: "$78", isGreen: true },
+              { label: "AVG SELL TIME", value: "4–7 days", isGreen: false },
+              { label: "COMPS ANALYZED", value: "23 listings", isGreen: false },
+            ].map(({ label, value, isGreen }) => (
               <div
                 key={label}
                 style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}
@@ -167,7 +167,7 @@ export default function Hero() {
                     fontFamily: "var(--font-mono)",
                     fontSize: "0.6rem",
                     letterSpacing: "0.12em",
-                    color: "#7A7060",
+                    color: "var(--c-muted)",
                     textTransform: "uppercase",
                   }}
                 >
@@ -177,7 +177,7 @@ export default function Hero() {
                   style={{
                     fontFamily: "var(--font-mono)",
                     fontSize: "0.8rem",
-                    color,
+                    color: isGreen ? "var(--c-green)" : "var(--c-text)",
                     letterSpacing: "0.04em",
                   }}
                 >
@@ -190,7 +190,7 @@ export default function Hero() {
           {/* Receipt footer */}
           <div
             style={{
-              borderTop: "1px solid #C8BEA8",
+              borderTop: "1px solid var(--c-border)",
               marginTop: "1.25rem",
               paddingTop: "0.875rem",
               display: "flex",
@@ -202,7 +202,7 @@ export default function Hero() {
               style={{
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.58rem",
-                color: "#C8BEA8",
+                color: "var(--c-border)",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
               }}

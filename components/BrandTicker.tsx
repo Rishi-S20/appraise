@@ -11,12 +11,13 @@ export default function BrandTicker() {
     <div
       aria-hidden="true"
       style={{
-        borderTop: "1px solid #C8BEA8",
-        borderBottom: "1px solid #C8BEA8",
+        borderTop: "1px solid var(--c-border)",
+        borderBottom: "1px solid var(--c-border)",
         overflow: "hidden",
         paddingTop: "0.875rem",
         paddingBottom: "0.875rem",
-        backgroundColor: "#EDE6D4",
+        backgroundColor: "var(--c-surface)",
+        transition: "background-color 0.25s ease, border-color 0.25s ease",
       }}
     >
       <div className="ticker-track">
@@ -27,7 +28,7 @@ export default function BrandTicker() {
               fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
               letterSpacing: "0.18em",
-              color: "#B5401A",
+              color: "var(--c-accent)",
               textTransform: "uppercase",
               paddingLeft: "2.5rem",
               paddingRight: "2.5rem",
@@ -35,7 +36,7 @@ export default function BrandTicker() {
             }}
           >
             {brand}
-            <span style={{ marginLeft: "2.5rem", color: "#C8BEA8" }}>·</span>
+            <span style={{ marginLeft: "2.5rem", color: "var(--c-border)" }}>·</span>
           </span>
         ))}
       </div>

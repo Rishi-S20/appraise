@@ -24,7 +24,7 @@ export default function EmailCapture() {
     <section
       id="waitlist"
       style={{
-        borderTop: "1px solid #C8BEA8",
+        borderTop: "1px solid var(--c-border)",
         paddingTop: "6rem",
         paddingBottom: "6rem",
       }}
@@ -48,7 +48,7 @@ export default function EmailCapture() {
           style={{
             fontFamily: "var(--font-serif)",
             fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
-            color: "#1E1612",
+            color: "var(--c-text)",
             lineHeight: "1.05",
             letterSpacing: "-0.02em",
             marginBottom: "1rem",
@@ -65,7 +65,7 @@ export default function EmailCapture() {
           style={{
             fontFamily: "var(--font-sans)",
             fontSize: "1rem",
-            color: "#7A7060",
+            color: "var(--c-muted)",
             lineHeight: "1.65",
             marginBottom: "2.5rem",
           }}
@@ -86,18 +86,18 @@ export default function EmailCapture() {
                 alignItems: "center",
                 gap: "0.75rem",
                 padding: "1.25rem 1.5rem",
-                border: "1px solid #3D7A52",
+                border: "1px solid var(--c-green)",
                 backgroundColor: "rgba(61, 122, 82, 0.06)",
               }}
             >
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "#3D7A52" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "var(--c-green)" }}>
                 ✓
               </span>
               <span
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.8rem",
-                  color: "#3D7A52",
+                  color: "var(--c-green)",
                   letterSpacing: "0.04em",
                 }}
               >
@@ -122,19 +122,20 @@ export default function EmailCapture() {
                 required
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
-                animate={{ borderColor: focused ? "#B5401A" : "#C8BEA8" }}
+                animate={{ borderColor: focused ? "var(--c-accent)" : "var(--c-border)" }}
                 transition={{ duration: 0.15 }}
                 style={{
                   flex: "1 1 240px",
-                  backgroundColor: "#EDE6D4",
-                  border: "1px solid #C8BEA8",
+                  backgroundColor: "var(--c-surface)",
+                  border: "1px solid var(--c-border)",
                   borderRight: "none",
-                  color: "#1E1612",
+                  color: "var(--c-text)",
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.85rem",
                   padding: "0.9rem 1.25rem",
                   outline: "none",
                   letterSpacing: "0.04em",
+                  transition: "background-color 0.25s ease",
                 }}
               />
               <Button type="submit" variant="accent" disabled={state === "loading"} style={{ flexShrink: 0 }}>
@@ -153,7 +154,7 @@ export default function EmailCapture() {
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
-              color: "#7A7060",
+              color: "var(--c-muted)",
               letterSpacing: "0.08em",
               marginTop: "1rem",
             }}

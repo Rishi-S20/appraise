@@ -9,7 +9,7 @@ export default async function HomePage() {
     <main
       style={{
         minHeight: "100vh",
-        backgroundColor: "#F7F2E9",
+        backgroundColor: "var(--c-bg)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -22,7 +22,7 @@ export default async function HomePage() {
             fontSize: "0.75rem",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
-            color: "#7A7060",
+            color: "var(--c-muted)",
             marginBottom: "1rem",
           }}
         >
@@ -32,7 +32,7 @@ export default async function HomePage() {
           style={{
             fontFamily: "var(--font-serif)",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
-            color: "#1E1612",
+            color: "var(--c-text)",
             lineHeight: "1.05",
           }}
         >

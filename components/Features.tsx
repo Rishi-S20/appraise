@@ -4,7 +4,7 @@ import { MotionCard } from "@/components/ui/MotionCard";
 const features = [
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#B5401A">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="var(--c-accent)">
         <line x1="4" y1="16" x2="28" y2="16" />
         <line x1="4" y1="16" x2="4" y2="11" />
         <line x1="28" y1="16" x2="28" y2="11" />
@@ -19,7 +19,7 @@ const features = [
   },
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#B5401A">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="var(--c-accent)">
         <circle cx="16" cy="16" r="10" />
         <polyline points="16,9 16,16 21,20" />
         <line x1="5" y1="5" x2="8" y2="8" strokeWidth="1" />
@@ -33,7 +33,7 @@ const features = [
   },
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#B5401A">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="var(--c-accent)">
         <rect x="4" y="4" width="10" height="10" />
         <rect x="18" y="4" width="10" height="10" />
         <rect x="4" y="18" width="10" height="10" />
@@ -53,7 +53,6 @@ export default function Features() {
   return (
     <section style={{ paddingTop: "5rem", paddingBottom: "6rem" }}>
       <div className="section-container">
-        {/* Header */}
         <div style={{ marginBottom: "3rem" }}>
           <AnimateIn delay={0} style={{ marginBottom: "0.875rem" }}>
             <span className="section-label">What you get</span>
@@ -63,18 +62,17 @@ export default function Features() {
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
-                color: "#1E1612",
+                color: "var(--c-text)",
                 lineHeight: "1.05",
                 letterSpacing: "-0.02em",
               }}
             >
               Everything you need to{" "}
-              <em style={{ fontStyle: "italic", color: "#7A7060" }}>price right.</em>
+              <em style={{ fontStyle: "italic", color: "var(--c-muted)" }}>price right.</em>
             </h2>
           </AnimateIn>
         </div>
 
-        {/* Feature cards */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {features.map((feature, i) => (
             <MotionCard
@@ -82,16 +80,14 @@ export default function Features() {
               delay={i * 0.1}
               style={{ padding: "2.25rem", display: "flex", flexDirection: "column" }}
             >
-              {/* Icon */}
               <div style={{ marginBottom: "1.75rem" }}>{feature.icon}</div>
 
-              {/* Title */}
               <h3
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontWeight: 700,
                   fontSize: "1.2rem",
-                  color: "#1E1612",
+                  color: "var(--c-text)",
                   marginBottom: "0.75rem",
                   fontStyle: "italic",
                 }}
@@ -99,12 +95,11 @@ export default function Features() {
                 {feature.title}
               </h3>
 
-              {/* Description */}
               <p
                 style={{
                   fontFamily: "var(--font-sans)",
                   fontSize: "0.9rem",
-                  color: "#7A7060",
+                  color: "var(--c-muted)",
                   lineHeight: "1.7",
                   margin: 0,
                   flexGrow: 1,
@@ -113,16 +108,15 @@ export default function Features() {
                 {feature.description}
               </p>
 
-              {/* Detail tag */}
               <div
                 style={{
                   marginTop: "1.75rem",
                   paddingTop: "1.25rem",
-                  borderTop: "1px solid #C8BEA8",
+                  borderTop: "1px solid var(--c-border)",
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.62rem",
                   letterSpacing: "0.12em",
-                  color: "#B5401A",
+                  color: "var(--c-accent)",
                   textTransform: "uppercase",
                 }}
               >

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { useUser, UserButton } from "@stackframe/stack";
 
 export default function Navbar() {
@@ -12,7 +13,11 @@ export default function Navbar() {
 
   return (
     <nav
-      style={{ borderBottom: "1px solid #C8BEA8", backgroundColor: "#F7F2E9" }}
+      style={{
+        borderBottom: "1px solid var(--c-border)",
+        backgroundColor: "var(--c-bg)",
+        transition: "background-color 0.25s ease, border-color 0.25s ease",
+      }}
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="section-container h-16 flex items-center justify-between">
@@ -21,14 +26,14 @@ export default function Navbar() {
           <motion.span
             style={{
               fontFamily: "var(--font-serif)",
-              color: "#1E1612",
+              color: "var(--c-text)",
               letterSpacing: "0.06em",
               fontSize: "1.5rem",
               fontWeight: 700,
               fontStyle: "italic",
               display: "inline-block",
             }}
-            whileHover={{ color: "#B5401A" }}
+            whileHover={{ color: "var(--c-accent)" }}
             transition={{ duration: 0.15 }}
           >
             Appraise
@@ -36,13 +41,14 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <Link href="#how-it-works" className="nav-link">
             How it works
           </Link>
           <Link href="#pricing" className="nav-link">
             Pricing
           </Link>
+          <ThemeToggle />
           {user ? (
             <UserButton />
           ) : (
@@ -52,44 +58,47 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col justify-center gap-1.25 p-2"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          style={{ background: "none", border: "none", cursor: "pointer" }}
-        >
-          <motion.span
-            style={{
-              display: "block",
-              width: "22px",
-              height: "1px",
-              backgroundColor: "#1E1612",
-            }}
-            animate={{ rotate: open ? 45 : 0, y: open ? 6 : 0 }}
-            transition={{ duration: 0.2 }}
-          />
-          <motion.span
-            style={{
-              display: "block",
-              width: "22px",
-              height: "1px",
-              backgroundColor: "#1E1612",
-            }}
-            animate={{ opacity: open ? 0 : 1 }}
-            transition={{ duration: 0.15 }}
-          />
-          <motion.span
-            style={{
-              display: "block",
-              width: "22px",
-              height: "1px",
-              backgroundColor: "#1E1612",
-            }}
-            animate={{ rotate: open ? -45 : 0, y: open ? -6 : 0 }}
-            transition={{ duration: 0.2 }}
-          />
-        </button>
+        {/* Mobile: toggle + hamburger */}
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle />
+          <button
+            className="flex flex-col justify-center gap-1.25 p-2"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            style={{ background: "none", border: "none", cursor: "pointer" }}
+          >
+            <motion.span
+              style={{
+                display: "block",
+                width: "22px",
+                height: "1px",
+                backgroundColor: "var(--c-text)",
+              }}
+              animate={{ rotate: open ? 45 : 0, y: open ? 6 : 0 }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.span
+              style={{
+                display: "block",
+                width: "22px",
+                height: "1px",
+                backgroundColor: "var(--c-text)",
+              }}
+              animate={{ opacity: open ? 0 : 1 }}
+              transition={{ duration: 0.15 }}
+            />
+            <motion.span
+              style={{
+                display: "block",
+                width: "22px",
+                height: "1px",
+                backgroundColor: "var(--c-text)",
+              }}
+              animate={{ rotate: open ? -45 : 0, y: open ? -6 : 0 }}
+              transition={{ duration: 0.2 }}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -102,8 +111,8 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeOut" }}
             style={{
               overflow: "hidden",
-              borderTop: "1px solid #C8BEA8",
-              backgroundColor: "#F7F2E9",
+              borderTop: "1px solid var(--c-border)",
+              backgroundColor: "var(--c-bg)",
             }}
           >
             <div className="px-6 py-6 flex flex-col gap-5">

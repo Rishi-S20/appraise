@@ -6,19 +6,19 @@ interface BadgeProps {
 export function Badge({ children, variant = "accent" }: BadgeProps) {
   const styles: Record<string, React.CSSProperties> = {
     accent: {
-      backgroundColor: "#B5401A",
-      color: "#F7F2E9",
+      backgroundColor: "var(--c-accent)",
+      color: "var(--c-bg)",
       border: "none",
     },
     muted: {
       backgroundColor: "transparent",
-      color: "#7A7060",
-      border: "1px solid #C8BEA8",
+      color: "var(--c-muted)",
+      border: "1px solid var(--c-border)",
     },
     outline: {
       backgroundColor: "transparent",
-      color: "#B5401A",
-      border: "1px solid #B5401A",
+      color: "var(--c-accent)",
+      border: "1px solid var(--c-accent)",
     },
   };
 

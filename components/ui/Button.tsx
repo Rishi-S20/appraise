@@ -16,8 +16,8 @@ interface ButtonProps {
 
 const accentBase: React.CSSProperties = {
   display: "inline-block",
-  backgroundColor: "#B5401A",
-  color: "#F7F2E9",
+  backgroundColor: "var(--c-accent)",
+  color: "var(--c-bg)",
   fontFamily: "var(--font-sans)",
   fontWeight: 700,
   letterSpacing: "0.1em",
@@ -27,20 +27,19 @@ const accentBase: React.CSSProperties = {
   border: "none",
   cursor: "pointer",
   textDecoration: "none",
-  boxShadow: "0 2px 10px rgba(181, 64, 26, 0.22)",
 };
 
 const ghostBase: React.CSSProperties = {
   display: "inline-block",
   backgroundColor: "transparent",
-  color: "#1E1612",
+  color: "var(--c-text)",
   fontFamily: "var(--font-sans)",
   fontWeight: 600,
   letterSpacing: "0.1em",
   textTransform: "uppercase",
   fontSize: "0.72rem",
   padding: "0.9rem 2.25rem",
-  border: "1px solid #C8BEA8",
+  border: "1px solid var(--c-border)",
   cursor: "pointer",
   textDecoration: "none",
 };
@@ -59,12 +58,8 @@ export function Button({
 
   const hoverProps =
     variant === "accent"
-      ? {
-          backgroundColor: "#8E3214",
-          boxShadow: "0 4px 18px rgba(181, 64, 26, 0.35)",
-          y: -2,
-        }
-      : { borderColor: "#B5401A", color: "#B5401A", y: -2 };
+      ? { backgroundColor: "var(--c-accent-dim)", y: -2 }
+      : { borderColor: "var(--c-accent)", color: "var(--c-accent)", y: -2 };
 
   const combinedStyle: React.CSSProperties = {
     ...base,

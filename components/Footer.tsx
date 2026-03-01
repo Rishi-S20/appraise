@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer style={{ borderTop: "1px solid #C8BEA8", paddingTop: "2.5rem", paddingBottom: "2.5rem" }}>
+    <footer style={{ borderTop: "1px solid var(--c-border)", paddingTop: "2.5rem", paddingBottom: "2.5rem" }}>
       <div className="section-container">
         <div
           style={{
@@ -12,11 +12,10 @@ export default function Footer() {
             marginBottom: "2rem",
           }}
         >
-          {/* Logo */}
           <span
             style={{
               fontFamily: "var(--font-serif)",
-              color: "#1E1612",
+              color: "var(--c-text)",
               letterSpacing: "0.06em",
               fontSize: "1.1rem",
               fontWeight: 700,
@@ -26,7 +25,6 @@ export default function Footer() {
             Appraise
           </span>
 
-          {/* Nav links */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>
             {[
               { label: "How it works", href: "#how-it-works" },
@@ -40,10 +38,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom row */}
         <div
           style={{
-            borderTop: "1px solid #E3DAC4",
+            borderTop: "1px solid var(--c-surface-2)",
             paddingTop: "1.5rem",
             display: "flex",
             flexWrap: "wrap",
@@ -56,7 +53,7 @@ export default function Footer() {
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
-              color: "#7A7060",
+              color: "var(--c-muted)",
               letterSpacing: "0.08em",
             }}
           >
@@ -66,7 +63,7 @@ export default function Footer() {
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
-              color: "#C8BEA8",
+              color: "var(--c-border)",
               letterSpacing: "0.08em",
             }}
           >

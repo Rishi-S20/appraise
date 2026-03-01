@@ -37,7 +37,6 @@ export default function Pricing() {
   return (
     <section id="pricing" style={{ paddingTop: "5rem", paddingBottom: "6rem" }}>
       <div className="section-container">
-        {/* Header */}
         <div style={{ marginBottom: "3rem" }}>
           <AnimateIn delay={0} style={{ marginBottom: "0.875rem" }}>
             <span className="section-label">Pricing</span>
@@ -47,18 +46,17 @@ export default function Pricing() {
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
-                color: "#1E1612",
+                color: "var(--c-text)",
                 lineHeight: "1.05",
                 letterSpacing: "-0.02em",
               }}
             >
               Simple pricing.{" "}
-              <em style={{ fontStyle: "italic", color: "#7A7060" }}>No surprises.</em>
+              <em style={{ fontStyle: "italic", color: "var(--c-muted)" }}>No surprises.</em>
             </h2>
           </AnimateIn>
         </div>
 
-        {/* Cards */}
         <div
           className="grid grid-cols-1 gap-6 md:grid-cols-2"
           style={{ maxWidth: "52rem" }}
@@ -70,7 +68,7 @@ export default function Pricing() {
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.62rem",
                 letterSpacing: "0.16em",
-                color: "#7A7060",
+                color: "var(--c-muted)",
                 textTransform: "uppercase",
                 marginBottom: "1.5rem",
               }}
@@ -83,7 +81,7 @@ export default function Pricing() {
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "4rem",
-                  color: "#1E1612",
+                  color: "var(--c-text)",
                   lineHeight: "1",
                   fontWeight: 700,
                 }}
@@ -94,7 +92,7 @@ export default function Pricing() {
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.68rem",
-                  color: "#7A7060",
+                  color: "var(--c-muted)",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   marginLeft: "0.75rem",
@@ -106,7 +104,7 @@ export default function Pricing() {
 
             <div
               style={{
-                borderTop: "1px solid #C8BEA8",
+                borderTop: "1px solid var(--c-border)",
                 paddingTop: "1.5rem",
                 marginBottom: "2rem",
                 display: "flex",
@@ -117,10 +115,10 @@ export default function Pricing() {
             >
               {freeTier.features.map((f) => (
                 <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "#C8BEA8" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "var(--c-border)" }}>
                     ·
                   </span>
-                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "#7A7060" }}>
+                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "var(--c-muted)" }}>
                     {f}
                   </span>
                 </div>
@@ -151,7 +149,7 @@ export default function Pricing() {
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.62rem",
                   letterSpacing: "0.16em",
-                  color: "#B5401A",
+                  color: "var(--c-accent)",
                   textTransform: "uppercase",
                 }}
               >
@@ -165,7 +163,7 @@ export default function Pricing() {
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "4rem",
-                  color: "#1E1612",
+                  color: "var(--c-text)",
                   lineHeight: "1",
                   fontWeight: 700,
                 }}
@@ -176,7 +174,7 @@ export default function Pricing() {
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.68rem",
-                  color: "#7A7060",
+                  color: "var(--c-muted)",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   marginLeft: "0.75rem",
@@ -188,7 +186,7 @@ export default function Pricing() {
 
             <div
               style={{
-                borderTop: "1px solid #C8BEA8",
+                borderTop: "1px solid var(--c-border)",
                 paddingTop: "1.5rem",
                 marginBottom: "2rem",
                 display: "flex",
@@ -199,10 +197,10 @@ export default function Pricing() {
             >
               {proTier.features.map((f) => (
                 <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "#B5401A" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "var(--c-accent)" }}>
                     ✓
                   </span>
-                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "#1E1612" }}>
+                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "var(--c-text)" }}>
                     {f}
                   </span>
                 </div>
@@ -215,13 +213,12 @@ export default function Pricing() {
           </MotionCard>
         </div>
 
-        {/* Pay-per-lookup note */}
         <AnimateIn delay={0.3} style={{ marginTop: "1.5rem" }}>
           <span
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.68rem",
-              color: "#7A7060",
+              color: "var(--c-muted)",
               letterSpacing: "0.08em",
             }}
           >
