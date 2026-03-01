@@ -1,18 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/Button";
 
-type FormState = "idle" | "loading" | "success" | "error";
+type FormState = "idle" | "loading" | "success";
 
 export default function EmailCapture() {
   const [email, setEmail] = useState("");
   const [state, setState] = useState<FormState>("idle");
+  const [focused, setFocused] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
     setState("loading");
-    // TODO: wire up to API route (e.g. Resend, ConvertKit, etc.)
+    // TODO: wire up to API route (e.g. Resend, ConvertKit)
     await new Promise((r) => setTimeout(r, 900));
     setState("success");
   }
@@ -21,148 +24,142 @@ export default function EmailCapture() {
     <section
       id="waitlist"
       style={{
-        borderTop: "1px solid #2d2820",
+        borderTop: "1px solid #2c2924",
         paddingTop: "6rem",
         paddingBottom: "6rem",
       }}
     >
-      <div
-        className="section-container"
-        style={{ maxWidth: "42rem" }}
-      >
-        <div
-          className="reveal section-label"
-          style={{ animationDelay: "0s", marginBottom: "1rem" }}
+      <div className="section-container" style={{ maxWidth: "44rem" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          style={{ marginBottom: "0.875rem" }}
         >
-          Early access
-        </div>
+          <span className="section-label">Early access</span>
+        </motion.div>
 
-        <h2
-          className="reveal"
+        <motion.h2
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            animationDelay: "0.1s",
             fontFamily: "var(--font-serif)",
-            fontSize: "clamp(2rem, 4vw, 3rem)",
-            color: "#f2ede4",
+            fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
+            color: "#eeeae0",
             lineHeight: "1.05",
-            letterSpacing: "-0.01em",
+            letterSpacing: "-0.02em",
             marginBottom: "1rem",
           }}
         >
           Be first in line.
-        </h2>
+        </motion.h2>
 
-        <p
-          className="reveal"
+        <motion.p
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            animationDelay: "0.2s",
             fontFamily: "var(--font-sans)",
             fontSize: "1rem",
-            color: "#857565",
+            color: "#6a655a",
             lineHeight: "1.65",
             marginBottom: "2.5rem",
           }}
         >
           Appraise is in closed beta. Join the waitlist and get early access
           before public launch — plus a free month of Pro when we ship.
-        </p>
+        </motion.p>
 
-        {state === "success" ? (
-          <div
-            className="reveal"
-            style={{
-              animationDelay: "0s",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.75rem",
-              padding: "1.25rem 1.5rem",
-              border: "1px solid #5dbf7a",
-              backgroundColor: "rgba(93, 191, 122, 0.06)",
-            }}
-          >
-            <span
+        <AnimatePresence mode="wait">
+          {state === "success" ? (
+            <motion.div
+              key="success"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
               style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "0.8rem",
-                color: "#5dbf7a",
-                letterSpacing: "0.1em",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.75rem",
+                padding: "1.25rem 1.5rem",
+                border: "1px solid #4dcc84",
+                backgroundColor: "rgba(77, 204, 132, 0.06)",
               }}
             >
-              ✓
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "0.8rem",
-                color: "#5dbf7a",
-                letterSpacing: "0.04em",
-              }}
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "#4dcc84" }}>
+                ✓
+              </span>
+              <span
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.8rem",
+                  color: "#4dcc84",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                You&apos;re on the list. We&apos;ll reach out when access opens.
+              </span>
+            </motion.div>
+          ) : (
+            <motion.form
+              key="form"
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              onSubmit={handleSubmit}
+              style={{ display: "flex", flexWrap: "wrap" }}
             >
-              You&apos;re on the list. We&apos;ll reach out when access opens.
-            </span>
-          </div>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="reveal"
-            style={{
-              animationDelay: "0.25s",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "0",
-            }}
-          >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              required
-              style={{
-                flex: "1 1 240px",
-                backgroundColor: "#181512",
-                border: "1px solid #2d2820",
-                borderRight: "none",
-                color: "#f2ede4",
-                fontFamily: "var(--font-mono)",
-                fontSize: "0.85rem",
-                padding: "0.875rem 1.25rem",
-                outline: "none",
-                letterSpacing: "0.04em",
-                transition: "border-color 0.15s ease",
-              }}
-              onFocus={(e) => (e.currentTarget.style.borderColor = "#e8b84b")}
-              onBlur={(e) => (e.currentTarget.style.borderColor = "#2d2820")}
-            />
-            <button
-              type="submit"
-              disabled={state === "loading"}
-              className="btn-accent"
-              style={{
-                flexShrink: 0,
-                opacity: state === "loading" ? 0.6 : 1,
-                cursor: state === "loading" ? "not-allowed" : "pointer",
-              }}
-            >
-              {state === "loading" ? "..." : "Join Waitlist"}
-            </button>
-          </form>
-        )}
+              <motion.input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                required
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+                animate={{ borderColor: focused ? "#c5f135" : "#2c2924" }}
+                transition={{ duration: 0.15 }}
+                style={{
+                  flex: "1 1 240px",
+                  backgroundColor: "#131110",
+                  border: "1px solid #2c2924",
+                  borderRight: "none",
+                  color: "#eeeae0",
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.85rem",
+                  padding: "0.9rem 1.25rem",
+                  outline: "none",
+                  letterSpacing: "0.04em",
+                }}
+              />
+              <Button type="submit" variant="accent" disabled={state === "loading"} style={{ flexShrink: 0 }}>
+                {state === "loading" ? "..." : "Join Waitlist"}
+              </Button>
+            </motion.form>
+          )}
+        </AnimatePresence>
 
         {state !== "success" && (
-          <p
-            className="reveal"
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             style={{
-              animationDelay: "0.35s",
               fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
-              color: "#857565",
+              color: "#6a655a",
               letterSpacing: "0.08em",
               marginTop: "1rem",
             }}
           >
             No spam. Unsubscribe any time.
-          </p>
+          </motion.p>
         )}
       </div>
     </section>

@@ -2,155 +2,129 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/Button";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
     <nav
-      style={{
-        borderBottom: "1px solid #2d2820",
-        backgroundColor: "#0c0a09",
-      }}
+      style={{ borderBottom: "1px solid #2c2924", backgroundColor: "#0a0908" }}
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="section-container h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 no-underline">
-          <span
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <motion.span
             style={{
-              fontFamily: "var(--font-serif)",
-              color: "#f2ede4",
+              fontFamily: "var(--font-mono)",
+              color: "#eeeae0",
               letterSpacing: "0.22em",
-              fontSize: "1rem",
+              fontSize: "2rem",
               textTransform: "uppercase",
+              display: "inline-block",
             }}
+            whileHover={{ color: "#c5f135" }}
+            transition={{ duration: 0.15 }}
           >
             Appraise
-          </span>
+          </motion.span>
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="#how-it-works"
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.7rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "#857565",
-              textDecoration: "none",
-              transition: "color 0.15s ease",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#f2ede4")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#857565")}
-          >
+          <Link href="#how-it-works" className="nav-link">
             How it works
           </Link>
-          <Link
-            href="#pricing"
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.7rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "#857565",
-              textDecoration: "none",
-              transition: "color 0.15s ease",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#f2ede4")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#857565")}
-          >
+          <Link href="#pricing" className="nav-link">
             Pricing
           </Link>
-          <a href="#waitlist" className="btn-accent">
+          <Button href="#waitlist" variant="accent">
             Get Early Access
-          </a>
+          </Button>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-[5px] p-2"
+          className="md:hidden flex flex-col justify-center gap-1.25 p-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           style={{ background: "none", border: "none", cursor: "pointer" }}
         >
-          <span
+          <motion.span
             style={{
               display: "block",
               width: "22px",
               height: "1px",
-              backgroundColor: "#f2ede4",
-              transition: "transform 0.2s ease, opacity 0.2s ease",
-              transform: open ? "translateY(6px) rotate(45deg)" : "none",
+              backgroundColor: "#eeeae0",
             }}
+            animate={{ rotate: open ? 45 : 0, y: open ? 6 : 0 }}
+            transition={{ duration: 0.2 }}
           />
-          <span
+          <motion.span
             style={{
               display: "block",
               width: "22px",
               height: "1px",
-              backgroundColor: "#f2ede4",
-              opacity: open ? 0 : 1,
-              transition: "opacity 0.2s ease",
+              backgroundColor: "#eeeae0",
             }}
+            animate={{ opacity: open ? 0 : 1 }}
+            transition={{ duration: 0.15 }}
           />
-          <span
+          <motion.span
             style={{
               display: "block",
               width: "22px",
               height: "1px",
-              backgroundColor: "#f2ede4",
-              transition: "transform 0.2s ease",
-              transform: open ? "translateY(-6px) rotate(-45deg)" : "none",
+              backgroundColor: "#eeeae0",
             }}
+            animate={{ rotate: open ? -45 : 0, y: open ? -6 : 0 }}
+            transition={{ duration: 0.2 }}
           />
         </button>
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div
-          style={{
-            borderTop: "1px solid #2d2820",
-            backgroundColor: "#0c0a09",
-          }}
-          className="md:hidden px-6 py-6 flex flex-col gap-5"
-        >
-          <Link
-            href="#how-it-works"
-            onClick={() => setOpen(false)}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
             style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.75rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "#857565",
-              textDecoration: "none",
+              overflow: "hidden",
+              borderTop: "1px solid #2c2924",
+              backgroundColor: "#0a0908",
             }}
           >
-            How it works
-          </Link>
-          <Link
-            href="#pricing"
-            onClick={() => setOpen(false)}
-            style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.75rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: "#857565",
-              textDecoration: "none",
-            }}
-          >
-            Pricing
-          </Link>
-          <a href="#waitlist" className="btn-accent" style={{ textAlign: "center" }}>
-            Get Early Access
-          </a>
-        </div>
-      )}
+            <div className="px-6 py-6 flex flex-col gap-5">
+              <Link
+                href="#how-it-works"
+                onClick={() => setOpen(false)}
+                className="nav-link"
+              >
+                How it works
+              </Link>
+              <Link
+                href="#pricing"
+                onClick={() => setOpen(false)}
+                className="nav-link"
+              >
+                Pricing
+              </Link>
+              <Button
+                href="#waitlist"
+                variant="accent"
+                style={{ textAlign: "center" }}
+              >
+                Get Early Access
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

@@ -1,12 +1,6 @@
 export default function Footer() {
   return (
-    <footer
-      style={{
-        borderTop: "1px solid #2d2820",
-        paddingTop: "2.5rem",
-        paddingBottom: "2.5rem",
-      }}
-    >
+    <footer style={{ borderTop: "1px solid #2c2924", paddingTop: "2.5rem", paddingBottom: "2.5rem" }}>
       <div className="section-container">
         <div
           style={{
@@ -22,7 +16,7 @@ export default function Footer() {
           <span
             style={{
               fontFamily: "var(--font-serif)",
-              color: "#f2ede4",
+              color: "#eeeae0",
               letterSpacing: "0.22em",
               fontSize: "0.9rem",
               textTransform: "uppercase",
@@ -48,7 +42,7 @@ export default function Footer() {
         {/* Bottom row */}
         <div
           style={{
-            borderTop: "1px solid #201c18",
+            borderTop: "1px solid #1c1a17",
             paddingTop: "1.5rem",
             display: "flex",
             flexWrap: "wrap",
@@ -61,7 +55,7 @@ export default function Footer() {
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
-              color: "#857565",
+              color: "#6a655a",
               letterSpacing: "0.08em",
             }}
           >
@@ -71,7 +65,7 @@ export default function Footer() {
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
-              color: "#2d2820",
+              color: "#2c2924",
               letterSpacing: "0.08em",
             }}
           >
