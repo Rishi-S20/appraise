@@ -35,47 +35,49 @@ export default function HowItWorks() {
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
-                color: "#eeeae0",
+                color: "#1E1612",
                 lineHeight: "1.05",
                 letterSpacing: "-0.02em",
               }}
             >
               From thrift find to listed
               <br />
-              <em style={{ fontStyle: "italic", color: "#6a655a" }}>in under a minute.</em>
+              <em style={{ fontStyle: "italic", color: "#7A7060" }}>in under a minute.</em>
             </h2>
           </AnimateIn>
         </div>
 
-        {/* Steps grid — fix: Tailwind handles columns, no inline gridTemplateColumns */}
+        {/* Steps grid */}
         <div className="grid grid-cols-1 md:grid-cols-3">
           {steps.map((step, i) => (
             <AnimateIn key={step.number} delay={i * 0.1}>
               <div
                 style={{
                   padding: "2.5rem",
-                  borderLeft: i === 0 ? "1px solid #2c2924" : "none",
-                  borderRight: "1px solid #2c2924",
-                  borderTop: "1px solid #2c2924",
-                  borderBottom: "1px solid #2c2924",
+                  borderLeft: i === 0 ? "1px solid #C8BEA8" : "none",
+                  borderRight: "1px solid #C8BEA8",
+                  borderTop: "1px solid #C8BEA8",
+                  borderBottom: "1px solid #C8BEA8",
                   position: "relative",
                   height: "100%",
                   boxSizing: "border-box",
+                  backgroundColor: "#F7F2E9",
                 }}
               >
                 {/* Decorative number */}
                 <div
                   style={{
-                    fontFamily: "var(--font-mono)",
+                    fontFamily: "var(--font-serif)",
                     fontSize: "6rem",
                     lineHeight: "1",
-                    color: "#c5f135",
-                    opacity: 0.1,
+                    color: "#B5401A",
+                    opacity: 0.08,
                     position: "absolute",
                     top: "1.25rem",
                     right: "1.5rem",
                     letterSpacing: "-0.04em",
                     userSelect: "none",
+                    fontWeight: 900,
                   }}
                 >
                   {step.number}
@@ -86,7 +88,7 @@ export default function HowItWorks() {
                   style={{
                     fontFamily: "var(--font-mono)",
                     fontSize: "0.62rem",
-                    color: "#c5f135",
+                    color: "#B5401A",
                     letterSpacing: "0.16em",
                     textTransform: "uppercase",
                     marginBottom: "1.5rem",
@@ -98,12 +100,13 @@ export default function HowItWorks() {
                 {/* Title */}
                 <h3
                   style={{
-                    fontFamily: "var(--font-sans)",
-                    fontWeight: 800,
-                    fontSize: "1.25rem",
-                    color: "#eeeae0",
+                    fontFamily: "var(--font-serif)",
+                    fontWeight: 700,
+                    fontSize: "1.35rem",
+                    color: "#1E1612",
                     marginBottom: "0.875rem",
-                    lineHeight: "1.25",
+                    lineHeight: "1.2",
+                    fontStyle: "italic",
                   }}
                 >
                   {step.title}
@@ -114,7 +117,7 @@ export default function HowItWorks() {
                   style={{
                     fontFamily: "var(--font-sans)",
                     fontSize: "0.9375rem",
-                    color: "#6a655a",
+                    color: "#7A7060",
                     lineHeight: "1.65",
                     margin: 0,
                   }}
@@ -130,13 +133,14 @@ export default function HowItWorks() {
         <AnimateIn delay={0.35}>
           <div
             style={{
-              borderLeft: "1px solid #2c2924",
-              borderRight: "1px solid #2c2924",
-              borderBottom: "1px solid #2c2924",
+              borderLeft: "1px solid #C8BEA8",
+              borderRight: "1px solid #C8BEA8",
+              borderBottom: "1px solid #C8BEA8",
               padding: "1.75rem 2.5rem",
               display: "flex",
               flexWrap: "wrap",
               gap: "2.5rem",
+              backgroundColor: "#EDE6D4",
             }}
           >
             {[
@@ -147,11 +151,12 @@ export default function HowItWorks() {
               <div key={stat} style={{ display: "flex", alignItems: "baseline", gap: "1rem" }}>
                 <span
                   style={{
-                    fontFamily: "var(--font-mono)",
+                    fontFamily: "var(--font-serif)",
                     fontSize: "1.75rem",
-                    color: "#c5f135",
+                    color: "#B5401A",
                     letterSpacing: "-0.03em",
                     whiteSpace: "nowrap",
+                    fontWeight: 700,
                   }}
                 >
                   {stat}
@@ -160,7 +165,7 @@ export default function HowItWorks() {
                   style={{
                     fontFamily: "var(--font-sans)",
                     fontSize: "0.8rem",
-                    color: "#6a655a",
+                    color: "#7A7060",
                     lineHeight: "1.4",
                     maxWidth: "160px",
                   }}

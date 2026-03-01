@@ -16,31 +16,31 @@ interface ButtonProps {
 
 const accentBase: React.CSSProperties = {
   display: "inline-block",
-  backgroundColor: "#c5f135",
-  color: "#0a0908",
+  backgroundColor: "#B5401A",
+  color: "#F7F2E9",
   fontFamily: "var(--font-sans)",
   fontWeight: 700,
-  letterSpacing: "0.07em",
+  letterSpacing: "0.1em",
   textTransform: "uppercase",
-  fontSize: "0.75rem",
+  fontSize: "0.72rem",
   padding: "0.9rem 2.25rem",
   border: "none",
   cursor: "pointer",
   textDecoration: "none",
-  boxShadow: "0 2px 14px rgba(197, 241, 53, 0.22)",
+  boxShadow: "0 2px 10px rgba(181, 64, 26, 0.22)",
 };
 
 const ghostBase: React.CSSProperties = {
   display: "inline-block",
   backgroundColor: "transparent",
-  color: "#eeeae0",
+  color: "#1E1612",
   fontFamily: "var(--font-sans)",
   fontWeight: 600,
-  letterSpacing: "0.07em",
+  letterSpacing: "0.1em",
   textTransform: "uppercase",
-  fontSize: "0.75rem",
+  fontSize: "0.72rem",
   padding: "0.9rem 2.25rem",
-  border: "1px solid #2c2924",
+  border: "1px solid #C8BEA8",
   cursor: "pointer",
   textDecoration: "none",
 };
@@ -60,11 +60,11 @@ export function Button({
   const hoverProps =
     variant === "accent"
       ? {
-          backgroundColor: "#a8d420",
-          boxShadow: "0 4px 22px rgba(197, 241, 53, 0.38)",
+          backgroundColor: "#8E3214",
+          boxShadow: "0 4px 18px rgba(181, 64, 26, 0.35)",
           y: -2,
         }
-      : { borderColor: "#c5f135", color: "#c5f135", y: -2 };
+      : { borderColor: "#B5401A", color: "#B5401A", y: -2 };
 
   const combinedStyle: React.CSSProperties = {
     ...base,

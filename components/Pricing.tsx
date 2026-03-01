@@ -47,18 +47,18 @@ export default function Pricing() {
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
-                color: "#eeeae0",
+                color: "#1E1612",
                 lineHeight: "1.05",
                 letterSpacing: "-0.02em",
               }}
             >
               Simple pricing.{" "}
-              <em style={{ fontStyle: "italic", color: "#6a655a" }}>No surprises.</em>
+              <em style={{ fontStyle: "italic", color: "#7A7060" }}>No surprises.</em>
             </h2>
           </AnimateIn>
         </div>
 
-        {/* Cards — fix: Tailwind handles columns, no inline gridTemplateColumns */}
+        {/* Cards */}
         <div
           className="grid grid-cols-1 gap-6 md:grid-cols-2"
           style={{ maxWidth: "52rem" }}
@@ -70,7 +70,7 @@ export default function Pricing() {
                 fontFamily: "var(--font-mono)",
                 fontSize: "0.62rem",
                 letterSpacing: "0.16em",
-                color: "#6a655a",
+                color: "#7A7060",
                 textTransform: "uppercase",
                 marginBottom: "1.5rem",
               }}
@@ -83,8 +83,9 @@ export default function Pricing() {
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "4rem",
-                  color: "#eeeae0",
+                  color: "#1E1612",
                   lineHeight: "1",
+                  fontWeight: 700,
                 }}
               >
                 {freeTier.price}
@@ -93,7 +94,7 @@ export default function Pricing() {
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.68rem",
-                  color: "#6a655a",
+                  color: "#7A7060",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   marginLeft: "0.75rem",
@@ -105,7 +106,7 @@ export default function Pricing() {
 
             <div
               style={{
-                borderTop: "1px solid #2c2924",
+                borderTop: "1px solid #C8BEA8",
                 paddingTop: "1.5rem",
                 marginBottom: "2rem",
                 display: "flex",
@@ -116,10 +117,10 @@ export default function Pricing() {
             >
               {freeTier.features.map((f) => (
                 <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "#6a655a" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "#C8BEA8" }}>
                     ·
                   </span>
-                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "#6a655a" }}>
+                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "#7A7060" }}>
                     {f}
                   </span>
                 </div>
@@ -150,7 +151,7 @@ export default function Pricing() {
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.62rem",
                   letterSpacing: "0.16em",
-                  color: "#c5f135",
+                  color: "#B5401A",
                   textTransform: "uppercase",
                 }}
               >
@@ -164,8 +165,9 @@ export default function Pricing() {
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "4rem",
-                  color: "#eeeae0",
+                  color: "#1E1612",
                   lineHeight: "1",
+                  fontWeight: 700,
                 }}
               >
                 {proTier.price}
@@ -174,7 +176,7 @@ export default function Pricing() {
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.68rem",
-                  color: "#6a655a",
+                  color: "#7A7060",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   marginLeft: "0.75rem",
@@ -186,7 +188,7 @@ export default function Pricing() {
 
             <div
               style={{
-                borderTop: "1px solid #2c2924",
+                borderTop: "1px solid #C8BEA8",
                 paddingTop: "1.5rem",
                 marginBottom: "2rem",
                 display: "flex",
@@ -197,10 +199,10 @@ export default function Pricing() {
             >
               {proTier.features.map((f) => (
                 <div key={f} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "#c5f135" }}>
+                  <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.7rem", color: "#B5401A" }}>
                     ✓
                   </span>
-                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "#eeeae0" }}>
+                  <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.9rem", color: "#1E1612" }}>
                     {f}
                   </span>
                 </div>
@@ -219,7 +221,7 @@ export default function Pricing() {
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.68rem",
-              color: "#6a655a",
+              color: "#7A7060",
               letterSpacing: "0.08em",
             }}
           >

@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav
-      style={{ borderBottom: "1px solid #2c2924", backgroundColor: "#0a0908" }}
+      style={{ borderBottom: "1px solid #C8BEA8", backgroundColor: "#F7F2E9" }}
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="section-container h-16 flex items-center justify-between">
@@ -20,14 +20,15 @@ export default function Navbar() {
         <Link href="/" style={{ textDecoration: "none" }}>
           <motion.span
             style={{
-              fontFamily: "var(--font-mono)",
-              color: "#eeeae0",
-              letterSpacing: "0.22em",
-              fontSize: "2rem",
-              textTransform: "uppercase",
+              fontFamily: "var(--font-serif)",
+              color: "#1E1612",
+              letterSpacing: "0.06em",
+              fontSize: "1.5rem",
+              fontWeight: 700,
+              fontStyle: "italic",
               display: "inline-block",
             }}
-            whileHover={{ color: "#c5f135" }}
+            whileHover={{ color: "#B5401A" }}
             transition={{ duration: 0.15 }}
           >
             Appraise
@@ -63,7 +64,7 @@ export default function Navbar() {
               display: "block",
               width: "22px",
               height: "1px",
-              backgroundColor: "#eeeae0",
+              backgroundColor: "#1E1612",
             }}
             animate={{ rotate: open ? 45 : 0, y: open ? 6 : 0 }}
             transition={{ duration: 0.2 }}
@@ -73,7 +74,7 @@ export default function Navbar() {
               display: "block",
               width: "22px",
               height: "1px",
-              backgroundColor: "#eeeae0",
+              backgroundColor: "#1E1612",
             }}
             animate={{ opacity: open ? 0 : 1 }}
             transition={{ duration: 0.15 }}
@@ -83,7 +84,7 @@ export default function Navbar() {
               display: "block",
               width: "22px",
               height: "1px",
-              backgroundColor: "#eeeae0",
+              backgroundColor: "#1E1612",
             }}
             animate={{ rotate: open ? -45 : 0, y: open ? -6 : 0 }}
             transition={{ duration: 0.2 }}
@@ -101,8 +102,8 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeOut" }}
             style={{
               overflow: "hidden",
-              borderTop: "1px solid #2c2924",
-              backgroundColor: "#0a0908",
+              borderTop: "1px solid #C8BEA8",
+              backgroundColor: "#F7F2E9",
             }}
           >
             <div className="px-6 py-6 flex flex-col gap-5">

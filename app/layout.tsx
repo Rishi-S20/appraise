@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
 import { StackProvider, StackTheme } from "@stackframe/stack";
 import { stackClientApp } from "../stack/client";
-import { DM_Serif_Display, Syne, Syne_Mono } from "next/font/google";
+import { Fraunces, Josefin_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const dmSerifDisplay = DM_Serif_Display({
+const fraunces = Fraunces({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["300", "400", "700", "900"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const syne = Syne({
+const josefinSans = Josefin_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "600", "700"],
   display: "swap",
 });
 
-const syneMono = Syne_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSerifDisplay.variable} ${syne.variable} ${syneMono.variable} antialiased`}
+        className={`${fraunces.variable} ${josefinSans.variable} ${ibmPlexMono.variable} antialiased`}
       ><StackProvider app={stackClientApp}><StackTheme>
         {children}
       </StackTheme></StackProvider></body>

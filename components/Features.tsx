@@ -4,7 +4,7 @@ import { MotionCard } from "@/components/ui/MotionCard";
 const features = [
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#c5f135">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#B5401A">
         <line x1="4" y1="16" x2="28" y2="16" />
         <line x1="4" y1="16" x2="4" y2="11" />
         <line x1="28" y1="16" x2="28" y2="11" />
@@ -19,7 +19,7 @@ const features = [
   },
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#c5f135">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#B5401A">
         <circle cx="16" cy="16" r="10" />
         <polyline points="16,9 16,16 21,20" />
         <line x1="5" y1="5" x2="8" y2="8" strokeWidth="1" />
@@ -33,7 +33,7 @@ const features = [
   },
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#c5f135">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" strokeWidth="1.5" stroke="#B5401A">
         <rect x="4" y="4" width="10" height="10" />
         <rect x="18" y="4" width="10" height="10" />
         <rect x="4" y="18" width="10" height="10" />
@@ -63,18 +63,18 @@ export default function Features() {
               style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
-                color: "#eeeae0",
+                color: "#1E1612",
                 lineHeight: "1.05",
                 letterSpacing: "-0.02em",
               }}
             >
               Everything you need to{" "}
-              <em style={{ fontStyle: "italic", color: "#6a655a" }}>price right.</em>
+              <em style={{ fontStyle: "italic", color: "#7A7060" }}>price right.</em>
             </h2>
           </AnimateIn>
         </div>
 
-        {/* Feature cards — fix: Tailwind handles columns */}
+        {/* Feature cards */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {features.map((feature, i) => (
             <MotionCard
@@ -88,12 +88,12 @@ export default function Features() {
               {/* Title */}
               <h3
                 style={{
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 800,
-                  fontSize: "1.125rem",
-                  color: "#eeeae0",
+                  fontFamily: "var(--font-serif)",
+                  fontWeight: 700,
+                  fontSize: "1.2rem",
+                  color: "#1E1612",
                   marginBottom: "0.75rem",
-                  letterSpacing: "0.01em",
+                  fontStyle: "italic",
                 }}
               >
                 {feature.title}
@@ -104,7 +104,7 @@ export default function Features() {
                 style={{
                   fontFamily: "var(--font-sans)",
                   fontSize: "0.9rem",
-                  color: "#6a655a",
+                  color: "#7A7060",
                   lineHeight: "1.7",
                   margin: 0,
                   flexGrow: 1,
@@ -118,11 +118,11 @@ export default function Features() {
                 style={{
                   marginTop: "1.75rem",
                   paddingTop: "1.25rem",
-                  borderTop: "1px solid #2c2924",
+                  borderTop: "1px solid #C8BEA8",
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.62rem",
                   letterSpacing: "0.12em",
-                  color: "#c5f135",
+                  color: "#B5401A",
                   textTransform: "uppercase",
                 }}
               >

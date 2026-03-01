@@ -24,7 +24,7 @@ export default function EmailCapture() {
     <section
       id="waitlist"
       style={{
-        borderTop: "1px solid #2c2924",
+        borderTop: "1px solid #C8BEA8",
         paddingTop: "6rem",
         paddingBottom: "6rem",
       }}
@@ -48,7 +48,7 @@ export default function EmailCapture() {
           style={{
             fontFamily: "var(--font-serif)",
             fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
-            color: "#eeeae0",
+            color: "#1E1612",
             lineHeight: "1.05",
             letterSpacing: "-0.02em",
             marginBottom: "1rem",
@@ -65,7 +65,7 @@ export default function EmailCapture() {
           style={{
             fontFamily: "var(--font-sans)",
             fontSize: "1rem",
-            color: "#6a655a",
+            color: "#7A7060",
             lineHeight: "1.65",
             marginBottom: "2.5rem",
           }}
@@ -86,18 +86,18 @@ export default function EmailCapture() {
                 alignItems: "center",
                 gap: "0.75rem",
                 padding: "1.25rem 1.5rem",
-                border: "1px solid #4dcc84",
-                backgroundColor: "rgba(77, 204, 132, 0.06)",
+                border: "1px solid #3D7A52",
+                backgroundColor: "rgba(61, 122, 82, 0.06)",
               }}
             >
-              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "#4dcc84" }}>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "#3D7A52" }}>
                 ✓
               </span>
               <span
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.8rem",
-                  color: "#4dcc84",
+                  color: "#3D7A52",
                   letterSpacing: "0.04em",
                 }}
               >
@@ -122,14 +122,14 @@ export default function EmailCapture() {
                 required
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
-                animate={{ borderColor: focused ? "#c5f135" : "#2c2924" }}
+                animate={{ borderColor: focused ? "#B5401A" : "#C8BEA8" }}
                 transition={{ duration: 0.15 }}
                 style={{
                   flex: "1 1 240px",
-                  backgroundColor: "#131110",
-                  border: "1px solid #2c2924",
+                  backgroundColor: "#EDE6D4",
+                  border: "1px solid #C8BEA8",
                   borderRight: "none",
-                  color: "#eeeae0",
+                  color: "#1E1612",
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.85rem",
                   padding: "0.9rem 1.25rem",
@@ -153,7 +153,7 @@ export default function EmailCapture() {
             style={{
               fontFamily: "var(--font-mono)",
               fontSize: "0.65rem",
-              color: "#6a655a",
+              color: "#7A7060",
               letterSpacing: "0.08em",
               marginTop: "1rem",
             }}
