@@ -1,0 +1,108 @@
+# Appraise — App Overview & Plan
+
+## What Is Appraise?
+
+Appraise is a pricing tool built specifically for vintage sellers on Depop. It takes the guesswork out of pricing by showing sellers what similar vintage items actually sold for, so they can list faster and more confidently.
+
+Vintage pricing is uniquely hard. There's no barcode, no retail price, and value shifts constantly based on trends, brand hype, and seasonality. Right now, sellers spend 10–15 minutes per item scrolling through sold listings trying to figure out what to charge. Appraise does that research instantly.
+
+## Who Is It For?
+
+Vintage resellers on Depop — specifically:
+
+- **Casual sellers** who thrift on weekends and list 10–30 items/month. They want quick, reliable pricing so they don't leave money on the table.
+- **Full-time resellers** who list 100+ items/month. They need speed and efficiency — saving even 5 minutes per item adds up to hours every week.
+- **New sellers** who have no idea what their vintage finds are worth and are afraid of pricing too high or too low.
+
+## How It Works
+
+1. The seller inputs their item details — brand, item type (tee, jacket, pants, etc.), decade/era, and condition.
+2. Appraise pulls from a database of real Depop sold listings for comparable items.
+3. It returns a suggested price range, average sold price, and how quickly similar items tend to sell.
+
+That's it. Simple, fast, and built around the way vintage sellers already think about their inventory.
+
+## Core Features (MVP)
+
+- **Price lookup** — enter item details, get a price range based on real sold data.
+- **Sell-through speed** — see how long similar items sat before selling so you can decide whether to price high and wait or price to flip fast.
+- **Top vintage brands database** — coverage of the most commonly resold vintage brands (Nike, Carhartt, Levi's, Ralph Lauren, Champion, Starter, band tees, etc.).
+- **Clean, mobile-friendly interface** — most Depop sellers work from their phones.
+
+## Future Features (Post-MVP)
+
+- **Photo-based pricing** — snap a photo of your item and Appraise identifies the brand, era, and item type automatically using image recognition.
+- **Trend alerts** — get notified when a brand or style is heating up in price so you know what to hunt for at the thrift store.
+- **Pricing history charts** — see how an item category's value has changed over time.
+- **Multi-platform expansion** — expand data sources to include eBay, Grailed, and Poshmark for a fuller pricing picture.
+- **Bulk pricing** — upload a spreadsheet of inventory and get prices for everything at once.
+- **"Price to sell" vs "Price to maximize"** — two pricing modes depending on the seller's goal.
+
+## Revenue Model
+
+**Freemium:**
+
+- **Free tier** — 10 price lookups per month. Enough to be useful and get sellers hooked.
+- **Pro tier ($7–10/month)** — unlimited lookups, trend alerts, sell-through data, and priority access to new features.
+- **Optional: Pay-per-lookup** — $0.25–0.50 per lookup for sellers who don't want a subscription but need occasional pricing help.
+
+The target customer already treats reselling as a business. $7–10/month pays for itself if it helps them price even one item better.
+
+## Market Opportunity
+
+- Depop has 35M+ registered users globally, with vintage being one of the platform's largest and fastest-growing categories.
+- The broader resale market is projected to reach $350B+ by 2027.
+- Existing pricing tools (Terapeak, PriceCharting, Vendoo) focus on new/branded items or eBay specifically. None are built specifically for vintage Depop sellers — that's the gap.
+
+## Competitive Advantage
+
+- **Niche focus** — built for vintage, not general reselling. This means better data and a product that actually understands the nuances of vintage pricing.
+- **Community-first approach** — launching directly within the Depop seller community rather than trying to serve everyone.
+- **Trend awareness** — vintage pricing is heavily trend-driven. Appraise will factor in what's hot right now, not just historical averages.
+- **Future ML edge** — image recognition and predictive pricing models will create a moat that simple lookup tools can't replicate.
+
+## Go-To-Market Strategy
+
+**Phase 1: Validate (Week 1)**
+- Talk to 20–30 vintage Depop sellers through DMs, Discord servers, and Facebook groups.
+- Confirm the pricing pain point and collect emails for beta access.
+
+**Phase 2: Build MVP (Weeks 2–4)**
+- Manually research and build a dataset of 200–300 sold vintage items across top brands.
+- Build a simple web app — dropdown inputs, price range output.
+
+**Phase 3: Beta Test (Week 5–6)**
+- Give beta access to initial 20–30 sellers.
+- Collect feedback on accuracy, missing categories, and usability.
+- Iterate quickly based on what they say.
+
+**Phase 4: Public Launch (Week 7–8)**
+- Post on r/Flipping, r/Entrepreneur, r/SideProject.
+- Share in Depop seller Discords and Facebook groups.
+- Create TikTok content demoing the tool.
+- Launch on Product Hunt.
+- Reach out to 2–3 reseller YouTubers for reviews.
+
+**Phase 5: Monetize (Week 9–10)**
+- Introduce the free/pro tier split.
+- Continue building the dataset and adding features based on user demand.
+
+## Technical Approach (High Level)
+
+- **Frontend** — React or Next.js, mobile-first design.
+- **Backend** — Python (Flask/FastAPI) or Node.js.
+- **Database** — PostgreSQL or Firebase for item/pricing data.
+- **Data collection** — manual research initially, then automated scraping or API integrations as available.
+- **Future ML layer** — image classification model for photo-based input, pricing prediction model trained on sold data.
+
+## Key Metrics to Track
+
+- Number of signups and active users
+- Lookups per user per month (engagement)
+- Free-to-paid conversion rate
+- Pricing accuracy (user feedback)
+- Retention — are sellers coming back weekly?
+
+## Summary
+
+Appraise is a focused, community-driven pricing tool for the underserved vintage Depop market. Start small with a simple MVP, validate with real sellers, and expand features as the user base grows. The combination of niche focus, trend awareness, and future ML capabilities creates a product that generic pricing tools can't match.
