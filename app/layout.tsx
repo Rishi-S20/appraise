@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackClientApp } from "../stack/client";
 import { DM_Serif_Display, Syne, Syne_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -43,9 +45,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${dmSerifDisplay.variable} ${syne.variable} ${syneMono.variable} antialiased`}
-      >
+      ><StackProvider app={stackClientApp}><StackTheme>
         {children}
-      </body>
+      </StackTheme></StackProvider></body>
     </html>
   );
 }

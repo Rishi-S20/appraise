@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { useUser, UserButton } from "@stackframe/stack";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const user = useUser();
 
   return (
     <nav
@@ -40,9 +42,13 @@ export default function Navbar() {
           <Link href="#pricing" className="nav-link">
             Pricing
           </Link>
-          <Button href="#waitlist" variant="accent">
-            Get Early Access
-          </Button>
+          {user ? (
+            <UserButton />
+          ) : (
+            <Button href="/handler/sign-up" variant="accent">
+              Get Early Access
+            </Button>
+          )}
         </div>
 
         {/* Mobile hamburger */}
@@ -114,13 +120,17 @@ export default function Navbar() {
               >
                 Pricing
               </Link>
-              <Button
-                href="#waitlist"
-                variant="accent"
-                style={{ textAlign: "center" }}
-              >
-                Get Early Access
-              </Button>
+              {user ? (
+                <UserButton />
+              ) : (
+                <Button
+                  href="/handler/sign-up"
+                  variant="accent"
+                  style={{ textAlign: "center" }}
+                >
+                  Get Early Access
+                </Button>
+              )}
             </div>
           </motion.div>
         )}
